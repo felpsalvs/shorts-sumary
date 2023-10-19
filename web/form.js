@@ -14,7 +14,7 @@ form.addEventListener("submit", async (event) => {
     return (content.textContent = "Esse vídeo não parece ser um short.")
   }
 
-  const [_, params] = videoURL.split("/shorts")
+  const [_, params] = videoURL.split("/shorts/")
   const [videoID] = params.split("?si")
 
   content.textContent = "Obtendo o texto do áudio..."

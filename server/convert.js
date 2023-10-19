@@ -1,3 +1,5 @@
+import fs from "fs"
+import wav from "node-wav"
 import ffmpeg from "fluent-ffmpeg"
 import ffmpegStatic from "ffmpeg-static"
 
@@ -12,6 +14,7 @@ export const convert = () =>
     ffmpeg()
       .input(filePath)
       .audioFrequency(16000)
+      .audioChannels(1)
       .format("wav")
       .on("end", () => {
         const file = fs.readFileSync(outputPath)
